@@ -48,3 +48,26 @@ var noiseLayer = L.esri.imageMapLayer({
 });
 
 console.log(noiseLayer);
+
+
+
+//Use Google palette to get range of rgb colors
+var colorRange = palette('sol-base',8);
+//console.log(colorRange);
+
+function createNoiseLegend(map) {
+    /*Legend specific*/
+    var legend = L.control({ position: "bottomleft" });
+
+    legend.onAdd = function(map) {
+        var div = L.DomUtil.create("div", "legendNoise");
+        div.innerHTML += "<h4>Noise Magnitude</h4>";
+        div.innerHTML += `<i style="background: #${colorRange[0]}"></i><span>30dB</span><br>`;
+        div.innerHTML += `<i style="background: #${colorRange[4]}"></i><span>80dB</span><br>`;
+        div.innerHTML += `<i style="background: #${colorRange[7]}"></i><span>120dB</span><br>`;
+        
+        return div;
+    };
+
+    legend.addTo(map);
+}

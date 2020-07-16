@@ -48,4 +48,5 @@ L.control.layers(baseMaps, overlayMaps, {
 }).addTo(mainMap);
 
 //noiseLayer.addTo(mainMap);
+createNoiseLegend(mainMap);
 waterLayer.addTo(mainMap);
