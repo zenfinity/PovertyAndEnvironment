@@ -20,31 +20,86 @@ var myMap = L.map("map", {
 var link = "MNcities_airquality.geojson";
 
 d3.json(link, function (data) {
-  //console.log(data);
-  // L.geoJson(data, {
-  // Style each feature (in this case a neighborhood)
-  //   style: {
-  //     color: "red",
-  //     opacity: 0.1,
-  //     fillColor: "red",
-  //     fillOpacity: 0.5,
-  //     weight: 0.5
-  //   }
-  // }).addTo(myMap);
-  let features = data.features
-  var heatArray = [];
-  features.forEach(function (feature) {
-    //console.log(feature.geometry);
-    let location = feature.geometry;
-    //console.log(location.coordinates[1]);
-    if (location) {
-      heatArray.push([location.coordinates[1],location.coordinates[0]]);
-    }
-  });
-  console.log(heatArray);
-  L.heatLayer(heatArray, {
-    radius: 20,
-    blur: 35
-  }).addTo(myMap);
+  function styleInfo(feature) {
+    return {
+      opacity: 1,
+      fillOpacity: 1,
+      fillColor: getColor(feature.properties.aqi),
+      stroke: true,
+      color: "#000000",
+      weight: 0.5
+    };
+  }
 
-});
+  function getColor(aqi) {
+    switch (true) {
+      case aqi >= 80:
+        return "green";
+      case aqi <= 79:
+        return "lime";
+      case aqi <= 69:
+        return "yellow";
+      case aqi <=  59:
+        return "orange";
+      case aqi <= 49:
+        return "red";
+      case aqi <= 39:
+        return "maroon";
+      default:
+        return "#098ee00";
+         
+    }
+  }
+L.geoJson(data, {
+  pointToLayer: function(feature, latlng) {
+    return L.circleMarker(latlng);
+  },
+  // circle style
+  style: styleInfo,
+  // popup for each marker
+  onEachFeature: function(feature, layer) {
+    layer.bindPopup("Air Quality Index " + feature.properties.aqi + "<br>Category:" + feature.properties.category +  "<br>Location: " + feature.properties.city);
+  }
+}).addTo(myMap);
+})
+  //console.log(data);
+//   L.geoJson(data, {
+//   //Style each feature 
+//     style: {
+//       color: "red",
+//       opacity: 0.1,
+//       fillColor: "red",
+//       fillOpacity: 0.5,
+//       weight: 0.5
+//     }
+//   }).addTo(myMap);
+// });
+//   let features = data.features
+//   var heatArray = [];
+//   features.forEach(function (feature) {
+//     //console.log(feature.geometry);
+//     let location = feature.geometry;
+//     //console.log(location.coordinates[1]);
+//     if (location) {
+//       heatArray.push([location.coordinates[1],location.coordinates[0]]);
+//     }
+//   });
+//   console.log(heatArray);
+
+// //   // var aqiArray = [];
+// //   // features.forEach(function (feature) {
+// //   //   //console.log(feature.geometry);
+// //   //   let aqi = feature.properties;
+// //   //   //console.log(location.coordinates[1]);
+// //   //   if (aqi) {
+// //   //     aqiArray.push([properties.aqi]);
+// //   //   }
+// //   // });
+
+//   L.heatLayer(heatArray, {
+//     radius: 20,
+//     blur: 15,
+//     //gradient: {0: 'lime', 50: 'yellow', 100:'orange', 150: 'red', 200: 'raspberry', 300: 'maroon'}
+//   }).addTo(myMap);
+
+// });
