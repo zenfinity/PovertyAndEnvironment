@@ -1,3 +1,10 @@
+/*Noise js for Poverty and Environment webapp
+
+by Ian Mac Moore
+
+See urlNoise link for source data.
+*/
+
 var urlNoise = 'https://maps.bts.dot.gov/services/rest/services/Noise/CONUS_ROAD_AND_AVIATION_NOISE_IS_Apr_2018/ImageServer';
 
 // var renderRule = {
