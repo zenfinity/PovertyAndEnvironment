@@ -4,14 +4,8 @@ var map = L.map("map", {
   zoom: 7
 });
 
-// Initialize LayerGroups
-var layers = {
-  water_layer: new L.LayerGroup(),
-  air_layer: new L.LayerGroup()
-};
-
 // Adding tile layer to the map
-water_layer = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+base_layer = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
   attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
   tileSize: 512,
   maxZoom: 18,
@@ -20,12 +14,10 @@ water_layer = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{
   accessToken: API_KEY
 })
 
-water_layer.addTo(map);
+base_layer.addTo(map);
 
 // initalize
-var locationSet = new Set();
-var water_markers = L.markerClusterGroup();
-var water_marker_list = [];
+var waterLayer = L.markerClusterGroup();
 
 // Store API query variables
 var baseURL = "https://enviro.epa.gov/enviro/efservice/";
@@ -49,8 +41,6 @@ let code = "A/";
 let other = "rows/1:19/"
 let type = "JSON"
 let count = "count"
-
-//https://enviro.epa.gov/enviro/efservice/violation/compl_per_begin_date/CONTAINING/-18/rows/1:19/JSON
 
 // Assemble API query URL
 var url11 = baseURL + table2 + column5 + operator3 + state + column2 + operator + date + column3 + yes + table + type; //MN 18 violations health 80
@@ -80,19 +70,10 @@ d3.json(url11, function (response) {
     // console.log(locationSet);
   });
 
-  console.log(water_markers);
-  map.addLayer(water_markers);
+  console.log(waterLayer);
+  map.addLayer(waterLayer);
 
 });
-
-// Create an overlays object to add to the layer control
-var overlays = {
-  "Water Quality Violations": layers.water_layer
-  // ,"Earthquakes": layers.earthquakes_layer
-};
-
-// Create a control for our layers, add our overlay layers to it
-L.control.layers(null, overlays).addTo(map);
 
 function sendGeocodingRequest(location) {
 
@@ -114,6 +95,6 @@ function createMarker(response) {  // We need to extract the coordinates from th
 
   var coordinates = response.features[0].geometry.coordinates;  // The coordintaes are in a [<lng>, <lat>] format/
   var latLng = L.latLng([coordinates[1], coordinates[0]]);
-  water_markers.addLayer(L.marker(latLng));
+  waterLayer.addLayer(L.marker(latLng));
 
 };
