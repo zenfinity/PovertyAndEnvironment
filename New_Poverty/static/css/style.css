@@ -15,6 +15,10 @@ html {
   border-radius: 10px;
 }
 
+.info-legend h3 {
+  margin: 0 0 0 0;
+}
+
 .info-legend span {
   position: relative;
   /* top: 4px; */
