@@ -18,6 +18,7 @@
 
 // initalize
 var waterLayer = L.markerClusterGroup();
+// let contams = new Set();
 
 // Store API query variables
 var baseURL = "https://enviro.epa.gov/enviro/efservice/";
@@ -57,20 +58,24 @@ d3.json(url11, function (response) {
     let address2 = f.WATER_SYSTEM.WATER_SYSTEM_ROW.ADDRESS_LINE2;
     let city = f.WATER_SYSTEM.WATER_SYSTEM_ROW.CITY_NAME;
     let state = f.WATER_SYSTEM.WATER_SYSTEM_ROW.STATE_CODE;
+    let vCode = f.VIOLATION_CATEGORY_CODE;
+    let contamCode = f.CONTAMINANT_CODE;
     let locationName = `${address1}, ${address2}, ${city}, ${state}`;
+    // contams.add(contamCode);
+ 
     //geocode to find lat long
     sendGeocodingRequest(locationName)
       .then(function (data) {
         // console.log(data)
         //and if it is successful create marker
-        createMarker(data)
+        //translate codes
+        decoder(vCode);
+        decoder2(contamCode);
+        createMarker(data, city, violation, contaminant)
       })
 
-    // locationSet.add(locationName);
-    // console.log(locationSet);
   });
 
-  console.log(waterLayer);
   //map.addLayer(waterLayer);
 
 });
@@ -91,10 +96,33 @@ function sendGeocodingRequest(location) {
     .then(response => response.json()); // parses JSON response into native Javascript objects
 };
 
-function createMarker(response) {  // We need to extract the coordinates from the response.
+function decoder(vCode) {
+ if (vCode === 'MCL'){ violation = "Maximum Contaminant Level"}
+ else if (vCode === 'MRDL'){ violation = "Maximum Residual Disinfectant Level"}
+ else if(vCode === 'TT'){ violation = "Treatment Technique"}
+ else if (vCode === 'M/R'){ violation = "Monitoring and Reporting Violations"}
+ 
+ else violation = vCode
+ 
+};
+
+function decoder2(contamCode) {
+  if (contamCode == 4000){contaminant = "Gross Alpha"}
+  else if (contamCode == 1040){contaminant = "Nitrate"}
+  else if(contamCode == 4010){contaminant = "Radium Isotopes"}
+  else if (contamCode == 1005){contaminant = "Arsenic"}
+  // else if(contamCode == 0300){contaminant = "Unknown"}
+  else if (contamCode == 8000){contaminant = "Coliform Bacteria"}
+  else if (contamCode == 2982){contaminant = "Carbon Tertachloride"}
+  // else if (contamCode == 0200){contaminant = "Unknown"}
+  
+  else contaminant = `${contamCode} Code`
+
+ };
+
+function createMarker(response, city, violation, contaminant) {  // We need to extract the coordinates from the response.
 
   var coordinates = response.features[0].geometry.coordinates;  // The coordintaes are in a [<lng>, <lat>] format/
   var latLng = L.latLng([coordinates[1], coordinates[0]]);
-  waterLayer.addLayer(L.marker(latLng));
-
+  waterLayer.addLayer(L.marker(latLng).bindPopup("<h2> Drinking Water Violation" + "</h2><hr> <strong>" + violation + ": </strong>" + contaminant + "<hr>" + city + " , MN"));
 };
