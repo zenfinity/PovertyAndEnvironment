@@ -117,8 +117,6 @@ d3.json(link, function(data) {
       // Giving each feature a pop-up with information pertinent to it
       layer.bindPopup("<h1>" + feature.properties.NAME + " County</h1><hr>" +
       "Percent Below Poverty Level: " + povertyRating(feature.properties.NAME));
-      console.log(povertyRating(feature.properties.NAME));
-      // <hr> <h2>" + feature.properties.County + "County</h2>");
     }
   }).addTo(myMap);
   
