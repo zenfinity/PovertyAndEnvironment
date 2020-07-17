@@ -20,6 +20,3 @@
 * Heatmap: [Leaflet.heatmap](https://leafletjs.com/)
 * Geocoding: [Travel Time](https://traveltime.com/)
 * Markers: [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster)
-
-## Contributors
-
