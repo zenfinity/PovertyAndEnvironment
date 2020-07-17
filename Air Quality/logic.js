@@ -93,6 +93,7 @@ d3.json(link, function (data) {
 
 var airQualityLayer = L.heatLayer(heatArray, {
   radius: 20,
-  blur: 5,
-  gradient: { 0: 'green', 0.5: 'lime', 1: 'red' }
+  blur: 3,
+  gradient: { 0.5: 'green', 0.8: 'orange', 1: 'red' },
+  minOpacity: 0.2
 });

@@ -19,24 +19,42 @@ var darkmap = L.tileLayer("https://api.mapbox.com/styles/v1/mapbox/{id}/tiles/{z
   accessToken: API_KEY
 });
 
+var graymap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox/light-v9',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: API_KEY
+});
+
 // Creating map object for initial load
 //...add layer we want to show up right away
 var mainMap = L.map("map", {
   center: [46.026063, -94.575648],
   zoom: 7,
-  layers : [darkmap,noiseLayer]
+  layers : [graymap,noiseLayer]
 });
+
+//noiseLayer.addTo(mainMap);
+var povertyLayer = runPovertyData(mainMap);
+createLegend(mainMap);
+airQualityLayer.addTo(mainMap);
+waterLayer.addTo(mainMap);
+legendPoverty.addTo(mainMap);
+
 
 // Create a layer control
 // Define a baseMaps object to hold our base layers
 var baseMaps = {
   "Street Map": streetmap,
-  "Dark Map": darkmap
+  "Dark Map": darkmap,
+  "Gray Map": graymap
 };
 
 // Create overlay object to easily pass layers to control
 var overlayMaps = {
-  //"Poverty" : 
+  //"Poverty" : povertyLayer,
   "Noise" : noiseLayer,
   "Water Quality" : waterLayer,
   "Air Quality" : airQualityLayer
@@ -47,10 +65,7 @@ L.control.layers(baseMaps, overlayMaps, {
   collapsed: false
 }).addTo(mainMap);
 
-//noiseLayer.addTo(mainMap);
-createNoiseLegend(mainMap);
-airQualityLayer.addTo(mainMap);
-waterLayer.addTo(mainMap);
+
 
 function createLegend(map) {
   /*Legend specific*/
