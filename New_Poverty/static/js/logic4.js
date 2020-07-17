@@ -74,6 +74,7 @@ function povertyRating(ctyName) {
   return rate;
 };
 
+<<<<<<< HEAD
 function runPovertyData(myMap) {
   d3.json(ctyLink, function (data) {
 
@@ -145,3 +146,73 @@ legendPoverty.onAdd = function () {
 
 // Adding legend to the map handled in main
 //legend.addTo(myMap);
+=======
+d3.json(link, function(data) {
+
+  let Features = data.features;
+  let Minnesota = Features.filter(feat => feat.properties.STATE == "27");
+  
+  // Creating a geoJSON layer with the retrieved data
+  L.geoJson(Minnesota, {
+    // Style each feature (in this case a neighborhood)
+    style: function(feature) {
+      return {
+        color: chooseColor(feature),
+        // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
+        fillColor: chooseColor(feature),
+        fillOpacity: 0.5,
+        weight: 1
+      };
+    },
+  
+    // Called on each feature
+    onEachFeature: function(feature, layer) {
+      // Set mouse events to change map styling
+      layer.on({
+        // When a user's mouse touches a map feature, the mouseover event calls this function, that feature's opacity changes to 90% so that it stands out
+        mouseover: function(event) {
+          layer = event.target;
+          layer.setStyle({
+            fillOpacity: 0.9
+          });
+        },
+        // When the cursor no longer hovers over a map feature - when the mouseout event occurs - the feature's opacity reverts back to 50%
+        mouseout: function(event) {
+          layer = event.target;
+          layer.setStyle({
+            fillOpacity: 0.5
+          });
+        },
+        // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
+        click: function(event) {
+          myMap.fitBounds(event.target.getBounds());
+        }
+      });
+      // Giving each feature a pop-up with information pertinent to it
+      layer.bindPopup("<h1>" + feature.properties.NAME + " County</h1><hr>" +
+      "Percent Below Poverty Level: " + povertyRating(feature.properties.NAME));
+    }
+  }).addTo(myMap);
+  
+      // Set up the legend
+      let legend = L.control({ position: "bottomright" });
+      legend.onAdd = function() {
+        let div = L.DomUtil.create("div", "info-legend");
+        let colors = ["#D3D3D3","#FFD700","#FFA07A","#FF6347","#DC143C"];
+        let labels = ["N/A","1-4","4-7","7-10","10+"];
+
+        let legendInfo = "<h3>Percent</h3><h3>Below</h3><h3>Poverty</h3>";
+  
+      div.innerHTML = legendInfo;
+  
+        for (let i = 0; i < colors.length; i++) {
+          div.innerHTML +=
+          "<i style='background: " + colors[i] + "'></i><span>" + labels[i] + "</span><br>";
+        }
+        return div;
+      };
+    
+      // Adding legend to the map
+      legend.addTo(myMap);
+});
+>>>>>>> e69912d2efc4c6468a4daf6d65aded9cf263fcaf
