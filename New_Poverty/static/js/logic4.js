@@ -40,13 +40,10 @@ d3.json(pLink, function(pData) {
 function chooseColor(name) {
   let cName = name.properties.NAME;
   let fColor = "lightgray";
-  // console.log(cName);
+
   povArray.forEach(function(data){
-    // console.log(data.countyName);
-    // console.log(cName);
-    // console.log(data.povRate);
+
     if (data.countyName == cName && +data.povRate > 10.0) {
-      // console.log(data.povRate);
       fColor = "crimson";
     }
     else if (data.countyName == cName && +data.povRate > 7.0) {
@@ -64,22 +61,16 @@ function chooseColor(name) {
 };
 
 function povertyRating(ctyName) {
-  let rate = "";
+  let rate = 'Unavailable';
   povArray.forEach(function(data){
-    console.log("CountyName:", data.countyName);
-    console.log("Name:", ctyName);
     if (data.countyName == ctyName) {
       rate = `${data.povRate}%`;
       console.log("found",rate);
       return rate;
     }
-    else {
-      rate = "Unavailable";
-      console.log("none",rate);
-      return rate;
-    }
-    // return rate;
   }); 
+
+  return rate;
 };
 
 d3.json(link, function(data) {
@@ -91,8 +82,6 @@ d3.json(link, function(data) {
   L.geoJson(Minnesota, {
     // Style each feature (in this case a neighborhood)
     style: function(feature) {
-      // console.log(feature.properties);
-      // console.log(pData);
       return {
         color: chooseColor(feature),
         // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
