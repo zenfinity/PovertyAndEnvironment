@@ -47,7 +47,7 @@ createLegend(mainMap);
 //airQualityLayer.addTo(mainMap);
 //waterLayer.addTo(mainMap);
 legendPoverty.addTo(mainMap);
-
+createAirLegend(mainMap);
 
 // Create a layer control
 // Define a baseMaps object to hold our base layers
