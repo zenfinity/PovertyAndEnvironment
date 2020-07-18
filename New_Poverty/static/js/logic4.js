@@ -34,7 +34,7 @@ d3.json(pLink, function (pData) {
     });
   });
   povArray.shift();
-  console.log(povArray);
+  // console.log(povArray);
 });
 
 // Function that will determine the color of a neighborhood based on the borough it belongs to
@@ -88,7 +88,7 @@ function runPovertyData(myMap) {
           color: chooseColor(feature),
           // Call the chooseColor function to decide which color to color our neighborhood (color based on borough)
           fillColor: chooseColor(feature),
-          fillOpacity: 0.5,
+          fillOpacity: 0.3,
           weight: 1
         };
       },
@@ -101,14 +101,14 @@ function runPovertyData(myMap) {
           mouseover: function (event) {
             layer = event.target;
             layer.setStyle({
-              fillOpacity: 0.9
+              fillOpacity: 0.7
             });
           },
           // When the cursor no longer hovers over a map feature - when the mouseout event occurs - the feature's opacity reverts back to 50%
           mouseout: function (event) {
             layer = event.target;
             layer.setStyle({
-              fillOpacity: 0.5
+              fillOpacity: 0.3
             });
           },
           // // When a feature (neighborhood) is clicked, it is enlarged to fit the screen
@@ -140,6 +140,11 @@ legendPoverty.onAdd = function () {
     div.innerHTML +=
       "<i style='background: " + colors[i] + "'></i><span>" + labels[i] + "</span><br>";
   }
+
+  let povertyInfo = "<a href='https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html'>More Info...</a>";
+
+  div.innerHTML += povertyInfo;
+   
   return div;
 };
 
