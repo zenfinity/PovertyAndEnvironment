@@ -17,7 +17,7 @@ var myMap = L.map("map", {
     accessToken: API_KEY
 }).addTo(myMap);
 
-var link = "MNcities_airquality.geojson";
+var link = "Air Quality/MNcities_airquality.geojson";
 
 d3.json(link, function (data) {
 //   function styleInfo(feature) {
