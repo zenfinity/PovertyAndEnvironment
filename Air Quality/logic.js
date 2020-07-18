@@ -115,4 +115,3 @@ function createAirLegend(map) {
 
   legendAir.addTo(map);
 };
-createAirLegend(myMap);
