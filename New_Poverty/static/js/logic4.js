@@ -39,27 +39,30 @@ d3.json(pLink, function (pData) {
 
 // Function that will determine the color of a neighborhood based on the borough it belongs to
 function chooseColor(name) {
-  let cName = name.properties.NAME;
-  let fColor = "lightgray";
-
-  povArray.forEach(function (data) {
-
-    if (data.countyName == cName && +data.povRate > 10.0) {
+  function chooseColor(name) {
+    let fColor = "lightgray";
+    let cName = name.properties.NAME;
+  
+    let povData = povArray.filter(data => data.countyName == cName);
+    let rate = povData.map(aData => aData.povRate);
+    console.log(rate);
+  
+    if (rate > 10.0) {
       fColor = "crimson";
-    }
-    else if (data.countyName == cName && +data.povRate > 7.0) {
+      console.log(fColor);
+    } else if (rate > 7.0) {
       fColor = "tomato";
-    }
-    else if (data.countyName == cName && +data.povRate > 4.0) {
+      console.log(fColor);
+    } else if (rate > 4.0) {
       fColor = "lightsalmon";
-    }
-    else if (data.countyName == cName && +data.povRate > 1.0) {
+      console.log(fColor);
+    } else if (rate > 1.0) {
       fColor = "gold";
+      console.log(fColor);
     }
-  });
-  // console.log(fColor);
-  return fColor;
-};
+    // console.log(fColor);
+    return fColor;
+  };
 
 function povertyRating(ctyName) {
   let rate = 'Unavailable';
