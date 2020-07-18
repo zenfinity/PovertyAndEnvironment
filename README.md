@@ -1,5 +1,5 @@
 # Poverty and Enviroment
-> An interactive map of Minnesota that displays environmental factors that acutely affect the people living there.
+> An interactive map of Minnesota that displays environmental factors that acutely affect the people living there. 
 
 ![screenshot here](header.png)
 
@@ -20,3 +20,4 @@
 * Heatmap: [Leaflet.heatmap](https://leafletjs.com/)
 * Geocoding: [Travel Time](https://traveltime.com/)
 * Markers: [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster)
+* Colors in Legend: [Color Palette Generator](https://github.com/google/palette.js#readme)
