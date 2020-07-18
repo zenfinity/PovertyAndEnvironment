@@ -33,14 +33,19 @@ var graymap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{
 var mainMap = L.map("map", {
   center: [46.026063, -94.575648],
   zoom: 7,
-  layers : [graymap,noiseLayer]
+  layers : [graymap]
 });
 
-//noiseLayer.addTo(mainMap);
-var povertyLayer = runPovertyData(mainMap);
+//Create a layer group to add poverty through its function
+var povertyLayer = L.layerGroup();
+
+runPovertyData(povertyLayer);
+
+povertyLayer.addTo(mainMap);
 createLegend(mainMap);
-airQualityLayer.addTo(mainMap);
-waterLayer.addTo(mainMap);
+//noiseLayer.addTo(mainMap);
+//airQualityLayer.addTo(mainMap);
+//waterLayer.addTo(mainMap);
 legendPoverty.addTo(mainMap);
 
 
@@ -54,7 +59,7 @@ var baseMaps = {
 
 // Create overlay object to easily pass layers to control
 var overlayMaps = {
-  //"Poverty" : povertyLayer,
+  "Poverty" : povertyLayer,
   "Noise" : noiseLayer,
   "Water Quality" : waterLayer,
   "Air Quality" : airQualityLayer
