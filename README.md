@@ -5,7 +5,7 @@
 
 ## Sources
 
-* **Poverty Statistics:** [@YourTwitter](https://twitter.com/dbader_org)
+* **Poverty Statistics:** [U.S. Census Bureau's American Community Survey](https://www.census.gov/data/developers/data-sets/acs-1year.html)
 * **Air Quality:** [Air Quality Index from Breeze-o-meter](https://breezometer.com/)
 * **Drinking Water Quality:** [EPA Envirofacts](https://www.epa.gov/enviro/sdwis-model)
 * **Noise Levels:** [Bureau of Transportion Statistics](https://data-usdot.opendata.arcgis.com/datasets/conus-road-and-aviation-noise-image-serviceg)
@@ -13,7 +13,9 @@
 ### Additional Reading
 
 [Drinking Water Contaminants Regulations](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
-[Noise Wiki](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)  [others?]
+[Noise Wiki](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
+[How the U.S. Census Bureau Measures Poverty](https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html)
+[others?]
 
 ## Built With
 * Mapping: [Leaflet](https://leafletjs.com/)
@@ -21,3 +23,4 @@
 * Geocoding: [Travel Time](https://traveltime.com/)
 * Markers: [Leaflet.markercluster](https://github.com/Leaflet/Leaflet.markercluster)
 * Colors in Legend: [Color Palette Generator](https://github.com/google/palette.js#readme)
+* Choropleth Map: [Interactive Choropleth Map](https://leafletjs.com/examples/choropleth/)
