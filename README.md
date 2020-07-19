@@ -5,7 +5,7 @@
 
 ## Sources
 
-* **Poverty Statistics:** [U.S. Census Bureau's American Community Survey](https://www.census.gov/data/developers/data-sets/acs-1year.html)
+* **Poverty Statistics:** [U.S. Census Bureau's 2018 American Community Survey](https://www.census.gov/data/developers/data-sets/acs-1year.html)
 * **Air Quality:** [Air Quality Index from Breeze-o-meter](https://breezometer.com/)
 * **Drinking Water Quality:** [EPA Envirofacts](https://www.epa.gov/enviro/sdwis-model)
 * **Noise Levels:** [Bureau of Transportion Statistics](https://data-usdot.opendata.arcgis.com/datasets/conus-road-and-aviation-noise-image-serviceg)
