@@ -143,7 +143,7 @@ legendPoverty.onAdd = function () {
       "<i style='background: " + colors[i] + "'></i><span>" + labels[i] + "</span><br>";
   }
 
-  let povertyInfo = "<a href='https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html'>More...</a>";
+  let povertyInfo = "<i><a href='https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html'>More...</a></i>";
 
   div.innerHTML += povertyInfo;
    
