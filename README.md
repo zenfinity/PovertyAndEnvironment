@@ -15,7 +15,6 @@
 [Drinking Water Contaminants Regulations](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
 [Noise Wiki](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
 [How the U.S. Census Bureau Measures Poverty](https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html)
-[others?]
 
 ## Built With
 * Mapping: [Leaflet](https://leafletjs.com/)
