@@ -134,7 +134,7 @@ legendPoverty.onAdd = function () {
   let colors = ["#D3D3D3", "#FFD700", "#FFA07A", "#FF6347", "#DC143C"];
   let labels = ["N/A", "1-4", "4-7", "7-10", "10+"];
 
-  let legendInfo = "<h4>Percent</h3><h3>Below</h3><h4>Poverty</h3>";
+  let legendInfo = "<h4>Percent</h4><h4>Below</h4><h4>Poverty</h3>";
 
   div.innerHTML = legendInfo;
 
