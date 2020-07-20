@@ -134,7 +134,7 @@ legendPoverty.onAdd = function () {
   let colors = ["#D3D3D3", "#FFD700", "#FFA07A", "#FF6347", "#DC143C"];
   let labels = ["N/A", "1-4", "4-7", "7-10", "10+"];
 
-  let legendInfo = "<h3>Percent</h3><h3>Below</h3><h3>Poverty</h3>";
+  let legendInfo = "<h4>Percent</h3><h3>Below</h3><h4>Poverty</h3>";
 
   div.innerHTML = legendInfo;
 
@@ -143,7 +143,7 @@ legendPoverty.onAdd = function () {
       "<i style='background: " + colors[i] + "'></i><span>" + labels[i] + "</span><br>";
   }
 
-  let povertyInfo = "<a href='https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html'>More Info...</a>";
+  let povertyInfo = "<a href='https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html'>More...</a>";
 
   div.innerHTML += povertyInfo;
    
