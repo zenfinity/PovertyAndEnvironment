@@ -126,3 +126,18 @@ function createMarker(response, city, violation, contaminant) {  // We need to e
   var latLng = L.latLng([coordinates[1], coordinates[0]]);
   waterLayer.addLayer(L.marker(latLng).bindPopup("<h2> Drinking Water Violation" + "</h2><hr> <strong>" + violation + ": </strong>" + contaminant + "<hr>" + city + " , MN"));
 };
+
+function createWaterLegend(map) {
+  let legendWater = L.control({position: "topleft"});
+
+  legendWater.onAdd = function () {
+    let div = L.DomUtil.create("div", "air-legend");
+
+    div.innerHTML += "<h4>  Water Contaminants      </h4>";
+    div.innerHTML += "<i><a href='https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf'>More...</a></i>";
+
+    return div;
+  };
+
+  legendWater.addTo(map);
+};
