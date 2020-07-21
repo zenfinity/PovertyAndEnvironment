@@ -9,14 +9,14 @@ html {
   height: 100%;
 }
 
-/* Noise Legend specific
+/* Noise Legend specific */
 .legend {
   padding: 6px 8px;
   font: 14px Arial, Helvetica, sans-serif;
   background: white;
   background: rgba(255, 255, 255, 0.8);
   /*box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);*/
-  /*border-radius: 5px;
+  /*border-radius: 5px;*/
   line-height: 24px;
   color: #555;
 }
@@ -58,7 +58,7 @@ html {
 
 .info-legend span {
   position: relative;
-  /* top: 4px; 
+  /* top: 4px; */
 }
 
 .info-legend i {
@@ -67,7 +67,7 @@ html {
   float: left;
   margin: 0 8px 0 0;
   opacity: .4;
-} */
+} 
 
 /*Air Legend Specific*/
 .legend {
