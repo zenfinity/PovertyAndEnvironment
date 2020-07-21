@@ -47,7 +47,7 @@ var noiseLayer = L.esri.imageMapLayer({
     //getBandIds().setRenderingRule(renderRule).
 });
 
-console.log(noiseLayer);
+//console.log(noiseLayer);
 
 
 
@@ -60,7 +60,7 @@ function createNoiseLegend(map) {
     var legend = L.control({ position: "bottomleft" });
 
     legend.onAdd = function(map) {
-        var div = L.DomUtil.create("div", "legendNoise");
+        var div = L.DomUtil.create("div", "air-legend");
         div.innerHTML += "<h4>Noise Magnitude</h4>";
         div.innerHTML += `<i style="background: #${colorRange[0]}"></i><span>30dB (quiet conversation)</span><br>`;
         div.innerHTML += `<i style="background: #${colorRange[4]}"></i><span>80dB (phone ring)</span><br>`;
