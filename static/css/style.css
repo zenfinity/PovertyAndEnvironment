@@ -111,8 +111,9 @@ html {
   border-radius: 10px;
 }
 
-.air-legend h3 {
+.air-legend h4 {
   margin: 0 0 0 0;
+  text-align: center;
 }
 
 .air-legend span {
@@ -125,4 +126,5 @@ html {
   height: 17px;
   float: left;
   margin: 0 8px 0 0;
+  opacity: .4;
 }

@@ -31,7 +31,7 @@ var graymap = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{
 // Creating map object for initial load
 //...add layer we want to show up right away
 var mainMap = L.map("map", {
-  center: [46.026063, -94.575648],
+  center: [46.35, -94.575648],
   zoom: 7,
   layers : [graymap]
 });
