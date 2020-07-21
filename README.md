@@ -8,12 +8,12 @@
 * **Poverty Statistics:** [U.S. Census Bureau's 2018 American Community Survey](https://www.census.gov/data/developers/data-sets/acs-1year.html)
 * **Air Quality:** [Air Quality Index from Breeze-o-meter](https://breezometer.com/)
 * **Drinking Water Quality:** [EPA Envirofacts](https://www.epa.gov/enviro/sdwis-model)
-* **Noise Levels:** [Bureau of Transportion Statistics](https://data-usdot.opendata.arcgis.com/datasets/conus-road-and-aviation-noise-image-serviceg)
+* **Noise Levels:** [Bureau of Transportion Statistics](https://maps.bts.dot.gov/services/rest/services/Noise/CONUS_ROAD_AND_AVIATION_NOISE_IS_Apr_2018/ImageServer)
 
 ### Additional Reading
 
-[Drinking Water Contaminants Regulations](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
-[Noise Wiki](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
+[Drinking Water Contaminants Regulations (pdf)](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
+[Noise Wiki (pdf)](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
 [How the U.S. Census Bureau Measures Poverty](https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html)
 
 ## Built With
