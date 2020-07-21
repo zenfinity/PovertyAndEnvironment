@@ -108,7 +108,7 @@ function createAirLegend(map) {
     div.innerHTML += `<i style="background: #008000"></i><span>Excellent Air Quality</span><br>`;
     div.innerHTML += `<i style="background: #00FF00"></i><span>Good Air Quality</span><br>`;
     div.innerHTML += `<i style="background: #FF0000"></i><span>Poor Air Quality</span><br>`;
-    div.innerHTML += "<i><a href='https://www.weather.gov/safety/airquality-aqindex'>More</a></i>";
+    div.innerHTML += "<i><a href='https://www.weather.gov/safety/airquality-aqindex'>More...</a></i>";
 
     return div;
   };
