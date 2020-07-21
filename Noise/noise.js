@@ -61,7 +61,8 @@ function createNoiseLegend(map) {
 
     legend.onAdd = function(map) {
         var div = L.DomUtil.create("div", "info-legend");
-        div.innerHTML += "<h4>Noise Magnitude</h4>";
+        div.innerHTML += "<h4>24 hr Equivalent</h4>";
+        div.innerHTML += "<h4>Avg Transportation Noise</h4>";
         div.innerHTML += `<i style="background: #${colorRange[0]}"></i><span>30dB (quiet conversation)</span><br>`;
         div.innerHTML += `<i style="background: #${colorRange[4]}"></i><span>80dB (phone ring)</span><br>`;
         div.innerHTML += `<i style="background: #${colorRange[7]}"></i><span>120dB (ambulance siren)</span><br>`;
