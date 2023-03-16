@@ -1,5 +1,5 @@
 # UofM Bootcamp Project 3: Poverty and Enviroment
-**Note**
+> **Note**
 > Data sources have been deprecated, and app is missing some layers until further notice. --IMM 2023/03/16
 ## An interactive map of Minnesota that displays environmental factors that acutely affect the people living there. 
 
