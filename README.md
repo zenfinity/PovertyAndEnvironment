@@ -1,5 +1,5 @@
-# Poverty and Enviroment
-> An interactive map of Minnesota that displays environmental factors that acutely affect the people living there. 
+# UofM Project 3: Poverty and Enviroment
+## An interactive map of Minnesota that displays environmental factors that acutely affect the people living there. 
 
 ![screenshot here](header.png)
 
