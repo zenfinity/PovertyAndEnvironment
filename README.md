@@ -15,10 +15,10 @@ Environmental Health is a growing area of awareness and research. People in raci
 
 ### Additional Reading
 
-[Drinking Water Contaminants Regulations (pdf)](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
-[Noise Wiki (pdf)](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
-[How the U.S. Census Bureau Measures Poverty](https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html)
-[CDC National Center for Environmental Health](https://www.cdc.gov/nceh/)
+* [Drinking Water Contaminants Regulations (pdf)](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
+* [Noise Wiki (pdf)](https://www.epa.gov/sites/production/files/2016-06/documents/npwdr_complete_table.pdf)<br/>
+* [How the U.S. Census Bureau Measures Poverty](https://www.census.gov/topics/income-poverty/poverty/guidance/poverty-measures.html)
+* [CDC National Center for Environmental Health](https://www.cdc.gov/nceh/)
 
 ## Built With
 * Mapping: [Leaflet](https://leafletjs.com/)
