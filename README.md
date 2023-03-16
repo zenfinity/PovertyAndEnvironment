@@ -2,6 +2,7 @@
 ## An interactive map of Minnesota that displays environmental factors that acutely affect the people living there. 
 
 ![screenshot here](header.png)
+Environmental Health is a growing area of awareness and research. People in racial and ethnic minority groups and with lower socioeconomic status are known to be especially at risk of preventable disease directly linked to environmental hazards. We chose factors which do not get as much attention as air quality or other vectors of chemical exposure, and attempted to visualize whether prevalence of these have a geographic correlation with poverty.
 
 ## Sources
 
