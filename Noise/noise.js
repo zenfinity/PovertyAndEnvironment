@@ -3,9 +3,15 @@
 by Ian Mac Moore
 
 See urlNoise link for source data.
+
+Old ARCGIS source moved/deprecated
+https://maps.bts.dot.gov/services/rest/services/Noise/CONUS_ROAD_AND_AVIATION_NOISE_IS_Apr_2018/ImageServer
+
+New
+https://geo.dot.gov/server/rest/services/Hosted/Noise_48_States_all_modes_2020/MapServer
 */
 
-var urlNoise = 'https://maps.bts.dot.gov/services/rest/services/Noise/CONUS_ROAD_AND_AVIATION_NOISE_IS_Apr_2018/ImageServer';
+var urlNoise = 'https://geo.dot.gov/server/rest/services/Hosted/Noise_48_States_all_modes_2020/MapServer/';
 
 // var renderRule = {
 //     rasterFunction : "Colormap", 
@@ -15,7 +21,9 @@ var urlNoise = 'https://maps.bts.dot.gov/services/rest/services/Noise/CONUS_ROAD
 //     variableName : "Raster"
 // };
 
-var noiseLayer = L.esri.imageMapLayer({
+// var noiseLayer = L.esri.imageMapLayer({
+// var noiseLayer = L.esri.TiledMapLayer({
+var noiseLayer = L.esri.dynamicMapLayer({
     url: urlNoise,
     opacity: 0.75,
     // style: {
@@ -43,11 +51,12 @@ var noiseLayer = L.esri.imageMapLayer({
     //f : 'jsapi',
     //format : 'png',
     //renderingRule : renderRule,
-    useCors: false
+    // useCors: false
+    crossOrigin: "anonymous"
     //getBandIds().setRenderingRule(renderRule).
 });
-
-//console.log(noiseLayer);
+console.log("heyo")
+console.log(noiseLayer);
 
 
 

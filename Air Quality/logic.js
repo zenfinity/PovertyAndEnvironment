@@ -86,7 +86,7 @@ d3.json(link, function (data) {
       heatArray.push([location.coordinates[1], location.coordinates[0], feature.properties.aqi / 100]);
     }
   });
-  console.log(heatArray);
+  // console.log(heatArray);
 
   //airQualityLayer.addTo(myMap);
 });

@@ -44,20 +44,20 @@ function chooseColor(name) {
 
     let povData = povArray.filter(data => data.countyName == cName);
     let rate = povData.map(aData => aData.povRate);
-    console.log(rate);
+    // console.log(rate);
 
     if (rate > 10.0) {
       fColor = "crimson";
-      console.log(fColor);
+      // console.log(fColor);
     } else if (rate > 7.0) {
       fColor = "tomato";
-      console.log(fColor);
+      // console.log(fColor);
     } else if (rate > 4.0) {
       fColor = "lightsalmon";
-      console.log(fColor);
+      // console.log(fColor);
     } else if (rate > 1.0) {
       fColor = "gold";
-      console.log(fColor);
+      // console.log(fColor);
     }
     // console.log(fColor);
     return fColor;
@@ -68,7 +68,7 @@ function povertyRating(ctyName) {
   povArray.forEach(function (data) {
     if (data.countyName == ctyName) {
       rate = `${data.povRate}%`;
-      console.log("found", rate);
+      // console.log("found", rate);
       return rate;
     }
   });

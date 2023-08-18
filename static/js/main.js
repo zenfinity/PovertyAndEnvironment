@@ -43,12 +43,12 @@ runPovertyData(povertyLayer);
 
 povertyLayer.addTo(mainMap);
 createNoiseLegend(mainMap);
-//noiseLayer.addTo(mainMap);
+noiseLayer.addTo(mainMap);
 //airQualityLayer.addTo(mainMap);
 //waterLayer.addTo(mainMap);
 legendPoverty.addTo(mainMap);
 createAirLegend(mainMap);
-createWaterLegend(mainMap);
+// createWaterLegend(mainMap);
 
 // Create a layer control
 // Define a baseMaps object to hold our base layers
@@ -62,7 +62,7 @@ var baseMaps = {
 var overlayMaps = {
   "Poverty" : povertyLayer,
   "Noise" : noiseLayer,
-  "Water Quality" : waterLayer,
+  // "Water Quality" : waterLayer,
   "Air Quality" : airQualityLayer
 };
 // Pass in our baseMaps and overlayMaps
