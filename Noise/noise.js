@@ -9,6 +9,14 @@ https://maps.bts.dot.gov/services/rest/services/Noise/CONUS_ROAD_AND_AVIATION_NO
 
 New
 https://geo.dot.gov/server/rest/services/Hosted/Noise_48_States_all_modes_2020/MapServer
+
+
+8/17/23 No error but nothing loads. Fantastic. Maybe use MapServer method to test later. Reference links:
+https://developers.arcgis.com/esri-leaflet/api-reference/layers/dynamic-map-layer/
+https://geo.dot.gov/server/rest/services/Hosted/Noise_48_States_all_modes_2020/MapServer?f=jsapi
+https://geo.dot.gov/server/sdk/rest/index.html#/Feature_Map_Service_Layer/02ss00000034000000/
+https://www.bts.gov/geospatial/national-transportation-noise-map
+https://data.bts.gov/stories/s/National-Transportation-Noise-Map/ri89-bhxh
 */
 
 var urlNoise = 'https://geo.dot.gov/server/rest/services/Hosted/Noise_48_States_all_modes_2020/MapServer/';
